@@ -5,10 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12.1"
 dependencies = [
-    "ipykernel>=7.1.0",
     "matplotlib>=3.10.7",
     "numpy>=2.3.4",
     "pandas>=2.3.3",
+    "pytubefix>=10.2.1",
     "seaborn>=0.13.2",
-    "tqdm>=4.67.1",
+    "ultralytics>=8.3.227",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.1.0",
+    "ruff>=0.14.4",
 ]
