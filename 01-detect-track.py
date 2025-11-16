@@ -1,12 +1,11 @@
 from pathlib import Path
-import pickle
 
 import pandas as pd
 from ultralytics import YOLO
 
 
 def main():
-    data = Path("./dataset/hightway-clipped.mp4")
+    data = Path("./dataset/highway.mp4")
     weights = Path("./weights/yolo11n.pt")
     output_dir = Path("./results")
 
@@ -18,7 +17,7 @@ def main():
     target_class = "truck"
     target_class_id = {v: k for k, v in model.names.items()}[target_class]
 
-    results = model.predict(source=data, conf=0.3, stream=True)
+    results = model.predict(source=data, conf=0.3, stream=True, save=True)
 
     # start detection
     track_detection_result = {}
@@ -30,8 +29,6 @@ def main():
 
         xyxy = r.boxes.xyxy[target_class_idx]
         track_detection_result[frame_id] = xyxy.cpu().tolist()
-    with open(output_dir / "track_detection_result.pkl", "wb") as f:
-        pickle.dump(track_detection_result, f)
 
     time = track_detection_result.keys()
     x1 = [xyxy[0][0] for xyxy in track_detection_result.values()]
@@ -52,7 +49,7 @@ def main():
     track_position_df["y"] = y
 
     track_position_df.plot(x="time")
-    track_position_df.to_csv(output_dir / "track_position.csv", index=False)
+    track_position_df.to_csv(output_dir / "truck_position.csv", index=False)
 
 
 if __name__ == "__main__":
