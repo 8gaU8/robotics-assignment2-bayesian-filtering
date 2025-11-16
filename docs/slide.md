@@ -13,7 +13,7 @@ header: "Assignment 2: *Object Tracking by Kalman Filter*"
 
 # **_Object Tracking by Kalman Filter_**
 
-Using Kalman Filter to track moving objects in video frames
+YOLO meets Kalman Filter
 
 ---
 
