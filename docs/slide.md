@@ -15,6 +15,8 @@ header: "Assignment 2: *Object Tracking by Kalman Filter*"
 
 YOLO meets Kalman Filter
 
+![Truck Video width:600px ](./assets/yolo-example.png)
+
 ---
 
 # Background
