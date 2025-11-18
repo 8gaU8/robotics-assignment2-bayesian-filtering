@@ -25,7 +25,7 @@ YOLO meets Kalman Filter
 - However, low-computational cost methods are still in demand for real-time applications on resource-constrained devices (edge-computing, IoT...).
 - Using lightweight object detection models combined with filtering techniques can provide efficient tracking solutions.
 
-**_→ YOLO nano + Kalman Filter!_**
+ ***→ YOLO nano + Kalman Filter for efficiency***
 
 ---
 
