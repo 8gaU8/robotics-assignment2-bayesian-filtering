@@ -56,3 +56,11 @@ tracking a moving truck using YOLOv11n and Kalman Filter.
 - Postprocessing of Detection Results
 - Occlusions and Missed Detection
 - Multiple Object Tracking
+
+<!-- As shown in the results, the obtained tracking trajectory by the Kalman Filter is smoother than the observation trajectory from the YOLOv11n model. This indicates that the Kalman Filter effectively reduces noise and fluctuations in the observations, resulting in a more stable and accurate tracking of the truck's position over time.
+
+However, this project has some limitations:
+
+1. Multiple Object Tracking: The current implementation only tracks a single truck in the video. In real-world scenarios, there may be multiple trucks or other vehicles present. Extending the Kalman Filter to handle multiple objects would be necessary for practical applications.
+2. Occlusions and Missed Detections: In some frames, the YOLOv11n model may fail to detect the truck due to occlusions or other factors. In this project, such cases were completed by linear interpolation before applying the Kalman filter. However, more sophisticated methods for handling occlusions and missed detections could improve tracking performance.
+3. Postprocessing of Detection Results: The output of the YOLOv11n model is bounding boxes. In this project, the corner point of the bounding box was used as the observation for the Kalman Filter. However, such a point may not accurately represent the position of the truck. Developing a method to extract more representative points from the bounding boxes could enhance tracking accuracy. -->
